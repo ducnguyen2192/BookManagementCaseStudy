@@ -12,11 +12,12 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class ImportBook {
+public class ImportBookList {
     public ArrayList<Book> importBook(Library lib) throws IOException {
         FileInputStream fis = new FileInputStream(new File("C:\\Users\\Thuy Nguyen\\Desktop\\codegym\\Module 2\\module2CaseStudy\\LibManagement.xls"));
         HSSFWorkbook wb = new HSSFWorkbook(fis);
         HSSFSheet sheet = wb.getSheetAt(0);
+        lib.getBookList().clear();
         for (Row row : sheet)
         {
             Book b = new Book();
@@ -31,13 +32,13 @@ public class ImportBook {
                             b.setBookName(cell.getStringCellValue());
                             break;
                         case 1:
-                            b.setBookId(cell.getNumericCellValue());
+                            b.setBookId((int) cell.getNumericCellValue());
                             break;
                         case 2:
-                            b.setBookQuantity(cell.getNumericCellValue());
+                            b.setBookQuantity((int) cell.getNumericCellValue());
                             break;
                         case 3:
-                            b.setBookEdition(cell.getNumericCellValue());
+                            b.setBookEdition((int) cell.getNumericCellValue());
                             break;
                         case 4:
                             b.setBookAuthor(cell.getStringCellValue());

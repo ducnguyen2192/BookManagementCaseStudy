@@ -2,10 +2,11 @@ package Entities;
 
 public class Book {
     private String bookName;
-    private double bookId;
-    private double bookQuantity;
-    private double bookEdition;
+    private int bookId;
+    private int bookQuantity;
+    private int bookEdition;
     private String bookAuthor;
+    private boolean isShown = true;
 
     public Book(){
 
@@ -19,27 +20,27 @@ public class Book {
         this.bookName = bookName;
     }
 
-    public Double getBookId() {
+    public int getBookId() {
         return bookId;
     }
 
-    public void setBookId(double bookId) {
+    public void setBookId(int bookId) {
         this.bookId = bookId;
     }
 
-    public Double getBookQuantity() {
+    public int getBookQuantity() {
         return bookQuantity;
     }
 
-    public void setBookQuantity(double bookQuantity) {
+    public void setBookQuantity(int bookQuantity) {
         this.bookQuantity = bookQuantity;
     }
 
-    public double getBookEdition() {
+    public int getBookEdition() {
         return bookEdition;
     }
 
-    public void setBookEdition(double bookEdition) {
+    public void setBookEdition(int bookEdition) {
         this.bookEdition = bookEdition;
     }
 
@@ -53,6 +54,18 @@ public class Book {
 
     public int getNumberOfAttributes() {
         return 5;
+    }
+
+    public boolean isShown() {
+        return isShown;
+    }
+
+    public void setIsShown(boolean shown) {
+        isShown = shown;
+    }
+
+    public boolean getIsShow(){
+        return isShown;
     }
 
     @Override

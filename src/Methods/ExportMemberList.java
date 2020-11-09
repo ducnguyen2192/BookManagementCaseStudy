@@ -1,8 +1,7 @@
 package Methods;
 
-import Entities.Book;
 import Entities.Library;
-import Entities.Member;
+import Entities.User;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
@@ -24,7 +23,7 @@ public class ExportMemberList {
             Sheet sheet = wb.getSheetAt(1);
 
             int rowCount = 0;
-            for (Member member : lib.getMemberList()) {
+            for (User member : lib.getMemberList()) {
                 Row row = sheet.createRow(++rowCount);
                 for (int columnCount = 0; columnCount < member.getNumberOfAttributes(); columnCount++) {
                     Cell cell = row.createCell(columnCount);

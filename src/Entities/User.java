@@ -2,22 +2,22 @@ package Entities;
 
 import java.util.ArrayList;
 
-public class Member {
+public class User {
     private String name;
-    private double SSN;
-    private double permission = 0;
+    private int SSN;
+    private int permission = 0;
     private String userName;
     private String password;
     ArrayList<BorrowingBook> borrowingBooks = new ArrayList<>();
 
 
-    public Member(){}
+    public User(){}
 
-    public double getSSN() {
+    public int getSSN() {
         return SSN;
     }
 
-    public void setSSN(double SSN) {
+    public void setSSN(int SSN) {
         this.SSN = SSN;
     }
 
@@ -31,11 +31,11 @@ public class Member {
 
 
 
-    public double getPermission() {
+    public int getPermission() {
         return permission;
     }
 
-    public void setPermission(double permission) {
+    public void setPermission(int permission) {
         this.permission = permission;
     }
 
@@ -58,11 +58,11 @@ public class Member {
         return 5;
     }
 
-    public ArrayList<BorrowingBook> getBorrowingBooks() {
+    public ArrayList<BorrowingBook> getBorrowingBookList() {
         return borrowingBooks;
     }
 
-    public void setBorrowingBooks(ArrayList<BorrowingBook> borrowingBooks) {
+    public void setBorrowingBookList(ArrayList<BorrowingBook> borrowingBooks) {
         this.borrowingBooks = borrowingBooks;
     }
 

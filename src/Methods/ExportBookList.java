@@ -12,7 +12,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 
-public class ExportBook {
+public class ExportBookList {
     public void exportToExcel(Library lib){
         String excelFilePath = "C:\\Users\\Thuy Nguyen\\Desktop\\codegym\\Module 2\\module2CaseStudy\\LibManagement.xls";
 
@@ -30,7 +30,6 @@ public class ExportBook {
                     switch(columnCount){
                         case 0:
                             cell.setCellValue(b.getBookName());
-
                             break;
                         case 1:
                             cell.setCellValue(b.getBookId());
@@ -38,6 +37,11 @@ public class ExportBook {
                         case 2:
                             cell.setCellValue(b.getBookQuantity());
                             break;
+                        case 3:
+                            cell.setCellValue(b.getBookEdition());
+                            break;
+                        case 4:
+                            cell.setCellValue(b.getBookAuthor());
                         default:
                     }
                 }

@@ -1,15 +1,14 @@
 package Entities;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class Library {
-    ArrayList<Member> members;
+    ArrayList<User> members;
     ArrayList<Book> books;
 //    private static final Library libInstance = new Library();
 
 
-    public Library(ArrayList<Member> members, ArrayList<Book> books){
+    public Library(ArrayList<User> members, ArrayList<Book> books){
         this.members = members;
         this.books = books;
     }
@@ -19,11 +18,11 @@ public class Library {
 //        return libInstance;
 //    }
 
-    public ArrayList<Member> getMemberList() {
+    public ArrayList<User> getMemberList() {
         return members;
     }
 
-    public void setMemberList(ArrayList<Member> members) {
+    public void setMemberList(ArrayList<User> members) {
         this.members = members;
     }
 

@@ -1,8 +1,7 @@
 package Methods;
 
-import Entities.Book;
 import Entities.Library;
-import Entities.Member;
+import Entities.User;
 import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.Cell;
@@ -14,13 +13,15 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class ImportMemberList {
-    public ArrayList<Member> importMemberList(Library lib) throws IOException {
+    public ArrayList<User> importMemberList(Library lib) throws IOException {
         FileInputStream fis = new FileInputStream(new File("C:\\Users\\Thuy Nguyen\\Desktop\\codegym\\Module 2\\module2CaseStudy\\LibManagement.xls"));
         HSSFWorkbook wb = new HSSFWorkbook(fis);
         HSSFSheet sheet = wb.getSheetAt(1);
+        lib.getMemberList().clear();
+
         for (Row row : sheet)
         {
-            Member member = new Member();
+            User member = new User();
             int cellIndex = 0;
             if(row.getRowNum() == 0){
                 continue;
@@ -32,7 +33,7 @@ public class ImportMemberList {
                             member.setName(cell.getStringCellValue());
                             break;
                         case 1:
-                            member.setSSN(cell.getNumericCellValue());
+                            member.setSSN((int) cell.getNumericCellValue());
                             break;
                         case 2:
                             member.setUserName(cell.getStringCellValue());
@@ -41,7 +42,7 @@ public class ImportMemberList {
                             member.setPassword(cell.getStringCellValue());
                             break;
                         case 4:
-                            member.setPermission(cell.getNumericCellValue());
+                            member.setPermission((int) cell.getNumericCellValue());
                             break;
                         default:
                             break;
